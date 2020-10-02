@@ -1,4 +1,4 @@
-OBJS = ../Game/TextureLoader.cpp ../main.cpp ../Config/includeHeader.h ../Config/eventTypes.h ../Game/Events.cpp ../Game/Game.cpp
+OBJS = ../Game/*.cpp ../main.cpp ../PrecompiledHeaders/*.h 
 CC = g++
 CFLAGS = -fpermissive -Wall -Wextra
 LFLAGS = -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system
