@@ -1,0 +1,22 @@
+(DONE) !(urgent)Update with respect to delta time
+(DONE)!(urgent)Create folder for precompiled headers
+Advanced keyboard and mouse events
+Tile map
+Animations(entity animation, particle system)
+Main Menu
+Figure out how to animate when mouse is over a main menu button
+Sound loader(Effects, music);
+Font loader
+Image manipulation(rotate, scale, change dimension, change color)
+Sound manipulation(volume changer, mute button for sounds and for music)
+?(maybe) Tile manager/level creator
+Views, aspect ratio, resize window with respect to aspect ratio
+Physics(add support for gravity, check for collisions)
+Entities
+Later on:
+Search for or create background, menu, player, assets;
+Load window bounds from configuration file.
+(!difficult) Multiple languages support
+Settings menu(change resolution, music volume, language, difficulty)
+Refactor the makefile code(create a file with all things that must be compile and
+                           input them in makefile) (maybe use cmake)
