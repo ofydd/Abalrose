@@ -1,7 +1,7 @@
 #ifndef EVENT_H
 #define EVENT_H
-#include "../Config/includeHeader.h"
-#include "../Config/eventTypes.h"
+#include "../PrecompiledHeaders/includeHeader.h"
+#include "../PrecompiledHeaders/eventTypes.h"
 
 class Events
 {
@@ -16,6 +16,5 @@ private:
     bool eventState;
 
 };
-
 
 #endif
