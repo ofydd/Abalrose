@@ -8,11 +8,21 @@ Game::~Game()
 {
 }
 
-void Game::manageEvents() // this is a function for the main event loop;
+void Game::manageEvents()
 {
   sf::Event event;
   while(mWindow.pollEvent(event))
-    events.handleEvent(event);
+    {
+      switch(event.type)
+      {
+          case sf::Event::Closed:
+            mWindow.close();
+            break;
+          case sf::Event::KeyPressed:
+            keyEvent.keyPressed(event.key.code);
+            break;
+      }
+    }
 }
 
 void Game::run()
