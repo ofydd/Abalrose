@@ -1,4 +1,4 @@
-OBJS = ../Game/*.cpp ../main.cpp ../PrecompiledHeaders/*.h 
+OBJS = ../Game/*.cpp ../main.cpp ../PrecompiledHeaders/*.h ../Game/Events/*.cpp 
 CC = g++
 CFLAGS = -fpermissive -Wall -Wextra
 LFLAGS = -lsfml-window -lsfml-graphics -lsfml-audio -lsfml-system
