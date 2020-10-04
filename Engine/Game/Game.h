@@ -4,6 +4,7 @@
 #include "../PrecompiledHeaders/eventTypes.h"
 #include "TextureLoader.h"
 #include "Events/KeyEvents.h"
+#include "Events/MouseEvents.h"
 
 class Game
 {
@@ -17,6 +18,7 @@ public:
 private:
     TextureLoader textureLoader;
     KeyEvents keyEvent;
+    MouseEvents mouseEvent;
 
     sf::RenderWindow mWindow;
     sf::Texture bgTexture;

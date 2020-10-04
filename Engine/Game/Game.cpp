@@ -21,6 +21,11 @@ void Game::manageEvents()
           case sf::Event::KeyPressed:
             keyEvent.keyPressed(event.key.code);
             break;
+          case sf::Event::MouseMoved:
+            mouseEvent.mouseMoved();
+            break;
+          case sf::Event::MouseButtonPressed:
+            mouseEvent.mousePressed(event.mouseButton.button);
       }
     }
 }
