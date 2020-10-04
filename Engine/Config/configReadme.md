@@ -1,1 +1,1 @@
-This folder handles preprocessed headers and config files.
+This folder contains different config files. I will use it for implementing user choice window size and key inputs.
