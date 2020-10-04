@@ -30,6 +30,8 @@ void Game::run()
 
     textureLoader.loadTexture(&bgTexture, "../background.png");
     background.setTexture(bgTexture);
+    textureLoader.loadTexture(&pTexture, "../player.png");
+    pSprite.setTexture(pTexture);
     sf::Clock clock;
     sf::Time sinceLastUpdate = sf::Time::Zero;
     while(mWindow.isOpen())
@@ -47,12 +49,13 @@ void Game::run()
 
 void Game::update(sf::Time deltaTime)
 {
-    sf::Vector2f movement(0.f, 0.f);
+    
 }
 
 void Game::render()
 {
   mWindow.clear(sf::Color(150, 150, 150, 255));
   mWindow.draw(background);
+  mWindow.draw(pSprite);
   mWindow.display();
 }

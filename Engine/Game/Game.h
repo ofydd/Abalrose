@@ -11,9 +11,9 @@ public:
     Game();
     ~Game();
 public:
-    void update(sf::Time deltaTime);
+    
     void run();
-    void render();
+    
 private:
     TextureLoader textureLoader;
     KeyEvents keyEvent;
@@ -21,10 +21,16 @@ private:
     sf::RenderWindow mWindow;
     sf::Texture bgTexture;
     sf::Sprite background;
+    sf::Texture pTexture;
+    sf::Sprite pSprite;
+
     sf::Time timePerFrame = sf::seconds(1.0f/144.f);
     //TODO: timePerFrame depends on refresh rate. Load from config file.
 private:
     void manageEvents();
+    void loadWindowBounds();
+    void render();
+    void update(sf::Time deltaTime);
 };
 
 #endif
