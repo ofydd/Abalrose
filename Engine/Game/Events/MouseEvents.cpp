@@ -8,7 +8,18 @@ MouseEvents::~MouseEvents()
 
 void MouseEvents::mousePressed(sf::Mouse::Button button)
 {
-    std::cout << "Mouse button pressed!" << std::endl;
+    switch(button)
+    {
+        case sf::Mouse::Left:
+            std::cout << "Left mouse button has been pressed!" << std::endl;
+            break;
+        case sf::Mouse::Right:
+            std::cout << "Right mouse button has been pressed!" << std::endl;
+            break;
+        case sf::Mouse::Middle:
+            std::cout << "Middle mouse button has been pressed!" << std::endl;
+            break;
+    }
 }
 
 void MouseEvents::mouseMoved(sf::RenderWindow &window)

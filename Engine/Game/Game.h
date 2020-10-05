@@ -14,13 +14,12 @@ public:
 public:
     
     void run();
-    
+    void init();
+
 private:
     sf::RenderWindow mWindow;
     sf::Texture bgTexture;
     sf::Sprite background;
-    sf::Texture pTexture;
-    sf::Sprite pSprite;
     
     TextureLoader textureLoader;
     KeyEvents keyEvent;
@@ -33,12 +32,13 @@ private:
     void loadWindowBounds();
     void render();
     void update(sf::Time deltaTime);
-    void init();
+    
 
 private: //window-related:
-    std::string name;
-    unsigned int width, height;
+    std::string title;
+    sf::Vector2u windowSize;
     bool fullscreen = false;
+    float refreshRate; 
 
 };
 

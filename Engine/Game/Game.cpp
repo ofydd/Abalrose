@@ -8,15 +8,24 @@ Game::~Game()
 {
 }
 
-void Game::init()
+void Game::loadWindowBounds()
 {
     std::ifstream windowIn("../Config/windowConfig.txt");
     if(!windowIn)
-      std::cout << "I did not manage to open the file!" << std::endl;
-    windowIn >> width; 
-    windowIn >> height;
-    std::cout << width << " " << height << std::endl;
+        std::cout << "I did not manage to open the file!" << std::endl;
+    windowIn >> windowSize.x; 
+    windowIn >> windowSize.y;
+    windowIn >> title; //TODO: fix std::getline, as it does not read text from file
+    windowIn >> fullscreen;
+    windowIn >> refreshRate;
+}
 
+void Game::init()
+{
+  loadWindowBounds();
+  mWindow.setSize(windowSize);
+  mWindow.setTitle(title);
+  mWindow.setFramerateLimit(uint(refreshRate)); 
 }
 
 void Game::manageEvents()
@@ -40,17 +49,17 @@ void Game::manageEvents()
           case sf::Event::MouseButtonPressed:
             mouseEvent.mousePressed(event.mouseButton.button);
             break;
+          case sf::Event::MouseWheelScrolled:
+            mouseEvent.mouseScrolled();
+            break;
       }    
     }
 }
 
 void Game::run()
 {
-    init();
     textureLoader.loadTexture(&bgTexture, "../background.png");
     background.setTexture(bgTexture);
-    textureLoader.loadTexture(&pTexture, "../player.png");
-    pSprite.setTexture(pTexture);
     sf::Clock clock; //this will be moved to the entity system. will call entity.update();
     sf::Time sinceLastUpdate = sf::Time::Zero;
     while(mWindow.isOpen())
@@ -75,6 +84,5 @@ void Game::render()
 {
   mWindow.clear(sf::Color(150, 150, 150, 255));
   mWindow.draw(background);
-  mWindow.draw(pSprite);
   mWindow.display();
 }
