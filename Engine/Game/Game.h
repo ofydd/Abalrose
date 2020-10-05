@@ -2,7 +2,7 @@
 #define GAME_H
 #include "../PrecompiledHeaders/includeHeader.h"
 #include "../PrecompiledHeaders/eventTypes.h"
-#include "TextureLoader.h"
+#include "Loaders/TextureLoader.h"
 #include "Events/KeyEvents.h"
 #include "Events/MouseEvents.h"
 

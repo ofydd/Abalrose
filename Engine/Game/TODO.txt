@@ -1,7 +1,6 @@
 IN PROGRESS:
-
+    Sound loader(Effects, music);
 TO BE DONE:
-Sound loader(Effects, music);
 Font loader
 Image manipulation(rotate, scale, change dimension, change color)
 Sound manipulation(volume changer, mute button for sounds and for music)
@@ -23,4 +22,4 @@ Updated with respect to delta time
 Created folder for precompiled headers
 Basic keyboard and mouse support;
 Texture loader
-Load window bounds from configuration file and create window based on them.
+Loaded window bounds from configuration file and created window based on them.
