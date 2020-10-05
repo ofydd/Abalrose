@@ -8,6 +8,17 @@ Game::~Game()
 {
 }
 
+void Game::init()
+{
+    std::ifstream windowIn("../Config/windowConfig.txt");
+    if(!windowIn)
+      std::cout << "I did not manage to open the file!" << std::endl;
+    windowIn >> width; 
+    windowIn >> height;
+    std::cout << width << " " << height << std::endl;
+
+}
+
 void Game::manageEvents()
 {
   sf::Event event;
@@ -20,6 +31,8 @@ void Game::manageEvents()
             break;
           case sf::Event::KeyPressed:
             keyEvent.keyPressed(event.key.code);
+            if(event.key.code == sf::Keyboard::J)
+              mouseEvent.setMouseCentered(mWindow);
             break;
           case sf::Event::MouseMoved:
             mouseEvent.mouseMoved(mWindow);
@@ -27,23 +40,18 @@ void Game::manageEvents()
           case sf::Event::MouseButtonPressed:
             mouseEvent.mousePressed(event.mouseButton.button);
             break;
-      }
-      /*if(sf::Keyboard::isKeyPressed(sf::Keyboard::J))
-      {
-          mouseEvent.setMouseCentered(mWindow);
-      }*/
-        
+      }    
     }
 }
 
 void Game::run()
 {
-
+    init();
     textureLoader.loadTexture(&bgTexture, "../background.png");
     background.setTexture(bgTexture);
     textureLoader.loadTexture(&pTexture, "../player.png");
     pSprite.setTexture(pTexture);
-    sf::Clock clock;
+    sf::Clock clock; //this will be moved to the entity system. will call entity.update();
     sf::Time sinceLastUpdate = sf::Time::Zero;
     while(mWindow.isOpen())
     {

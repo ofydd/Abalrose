@@ -7,6 +7,7 @@
   #include <map>
   #include <algorithm>
   #include <iomanip>
+  #include <fstream>
 
   #include <SFML/Window.hpp>
   #include <SFML/System.hpp>

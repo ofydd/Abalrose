@@ -33,6 +33,13 @@ private:
     void loadWindowBounds();
     void render();
     void update(sf::Time deltaTime);
+    void init();
+
+private: //window-related:
+    std::string name;
+    unsigned int width, height;
+    bool fullscreen = false;
+
 };
 
 #endif

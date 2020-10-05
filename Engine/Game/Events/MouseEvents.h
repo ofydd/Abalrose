@@ -15,11 +15,12 @@ public:
 public:
     sf::Vector2i mousePosition;
     sf::Vector2i prevMousePosition;
-    sf::Vector2i mousePositionCentered;
     sf::Vector2i getMousePosition();
     
 private:
-    sf::Vector2u windowBounds;
+    //width and height of the render window, used to set mouse centered;
+    int width, height; 
+                                
 };
 
 #endif
