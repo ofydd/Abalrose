@@ -22,11 +22,17 @@ void Game::manageEvents()
             keyEvent.keyPressed(event.key.code);
             break;
           case sf::Event::MouseMoved:
-            mouseEvent.mouseMoved();
+            mouseEvent.mouseMoved(mWindow);
             break;
           case sf::Event::MouseButtonPressed:
             mouseEvent.mousePressed(event.mouseButton.button);
+            break;
       }
+      /*if(sf::Keyboard::isKeyPressed(sf::Keyboard::J))
+      {
+          mouseEvent.setMouseCentered(mWindow);
+      }*/
+        
     }
 }
 

@@ -16,15 +16,15 @@ public:
     void run();
     
 private:
-    TextureLoader textureLoader;
-    KeyEvents keyEvent;
-    MouseEvents mouseEvent;
-
     sf::RenderWindow mWindow;
     sf::Texture bgTexture;
     sf::Sprite background;
     sf::Texture pTexture;
     sf::Sprite pSprite;
+    
+    TextureLoader textureLoader;
+    KeyEvents keyEvent;
+    MouseEvents mouseEvent;
 
     sf::Time timePerFrame = sf::seconds(1.0f/144.f);
     //TODO: timePerFrame depends on refresh rate. Load from config file.

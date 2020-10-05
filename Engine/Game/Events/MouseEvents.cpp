@@ -11,9 +11,9 @@ void MouseEvents::mousePressed(sf::Mouse::Button button)
     std::cout << "Mouse button pressed!" << std::endl;
 }
 
-void MouseEvents::mouseMoved()
+void MouseEvents::mouseMoved(sf::RenderWindow &window)
 {
-    std::cout << sf::Mouse::getPosition().x << " " << sf::Mouse::getPosition().y << std::endl;
+    //std::cout << sf::Mouse::getPosition(window).x << " " << sf::Mouse::getPosition(window).y << std::endl;
 }
 
 void MouseEvents::mouseScrolled()
@@ -21,9 +21,16 @@ void MouseEvents::mouseScrolled()
     std::cout << "Mouse wheel scrolled!" << std::endl;
 }
 
-void MouseEvents::setMouseCentered()
+void MouseEvents::setMouseCentered(sf::RenderWindow &window)
 {
-    //TODO: Get window bounds and set mousePosition.x = wBounds.x, mousePosition.y = wBounds.y;
+    
+    // TODO: fix this:
+    // std::ifstream fin("../../../Engine/Config/windowConfig.txt");
+    // fin >> windowBounds.x >> windowBounds.y;
+    // std::cout << windowBounds.x << windowBounds.y;
+    // idk, seems like it does not open the file or there 
+    // is something wrong with the file itself,
+    // only loads 0000 instead of 600 400
 }
 
 sf::Vector2i MouseEvents::getMousePosition()

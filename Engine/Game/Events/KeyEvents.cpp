@@ -26,8 +26,6 @@ void KeyEvents::keyPressed(sf::Keyboard::Key key)
             break;
         case sf::Keyboard::D:
             std::cout << "D" << std::endl;
-            break;
-
-        
+            break;       
     }
 }

@@ -9,17 +9,17 @@ public:
     ~MouseEvents();
 
     void mousePressed(sf::Mouse::Button button);
-    void mouseMoved();
+    void mouseMoved(sf::RenderWindow &window);
     void mouseScrolled();
-    void setMouseCentered();
+    void setMouseCentered(sf::RenderWindow &window);
 public:
     sf::Vector2i mousePosition;
     sf::Vector2i prevMousePosition;
+    sf::Vector2i mousePositionCentered;
     sf::Vector2i getMousePosition();
     
 private:
-    //std::ifstream windowBounds; will load the window.size() from Config/windowConfig.ini
-    //float mPosX, mPosY;
+    sf::Vector2u windowBounds;
 };
 
 #endif
