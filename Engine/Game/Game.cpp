@@ -48,6 +48,8 @@ void Game::manageEvents()
             break;
           case sf::Event::MouseButtonPressed:
             mouseEvent.mousePressed(event.mouseButton.button);
+          //for now, change later:
+            soundEffect.loadSound(mSound, "hello!");
             break;
           case sf::Event::MouseWheelScrolled:
             mouseEvent.mouseScrolled();

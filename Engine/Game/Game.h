@@ -3,6 +3,7 @@
 #include "../PrecompiledHeaders/includeHeader.h"
 #include "../PrecompiledHeaders/eventTypes.h"
 #include "Loaders/TextureLoader.h"
+#include "Loaders/SoundLoader.h"
 #include "Events/KeyEvents.h"
 #include "Events/MouseEvents.h"
 
@@ -20,8 +21,10 @@ private:
     sf::RenderWindow mWindow;
     sf::Texture bgTexture;
     sf::Sprite background;
+    sf::Sound mSound;
     
     TextureLoader textureLoader;
+    SoundLoader soundEffect;
     KeyEvents keyEvent;
     MouseEvents mouseEvent;
 

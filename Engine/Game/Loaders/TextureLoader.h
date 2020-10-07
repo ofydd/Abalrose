@@ -11,8 +11,8 @@ public:
   public:
     void loadTexture(sf::Texture *texture, std::string location);
   private:
-    sf::Texture *texture;
-    std::string location;
+    //sf::Texture *texture;
+    //std::string location;
 };
 
 #endif
