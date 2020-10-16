@@ -4,6 +4,7 @@
 #include "../PrecompiledHeaders/eventTypes.h"
 #include "Loaders/TextureLoader.h"
 #include "Loaders/SoundLoader.h"
+#include "Loaders/FontLoader.h"
 #include "Events/KeyEvents.h"
 #include "Events/MouseEvents.h"
 
@@ -22,9 +23,14 @@ private:
     sf::Texture bgTexture;
     sf::Sprite background;
     sf::Sound mSound;
-    
+    sf::SoundBuffer sBuffer;
+    sf::Font mFont;
+    sf::Text mText;
+
     TextureLoader textureLoader;
     SoundLoader soundEffect;
+    FontLoader fontLoader;
+
     KeyEvents keyEvent;
     MouseEvents mouseEvent;
 

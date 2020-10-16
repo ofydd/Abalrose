@@ -9,7 +9,11 @@ public:
     SoundLoader();
     ~SoundLoader();
 public:
-    void loadSound(sf::Sound sound, std::string location);
+    void loadSound(sf::SoundBuffer &soundBuffer, sf::Sound &sound, std::string location);
+
+private:
+    sf::Sound sound;
+    sf::SoundBuffer buffer;
 };
 
 #endif

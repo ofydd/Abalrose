@@ -48,8 +48,6 @@ void Game::manageEvents()
             break;
           case sf::Event::MouseButtonPressed:
             mouseEvent.mousePressed(event.mouseButton.button);
-          //for now, change later:
-            soundEffect.loadSound(mSound, "hello!");
             break;
           case sf::Event::MouseWheelScrolled:
             mouseEvent.mouseScrolled();
@@ -62,11 +60,23 @@ void Game::run()
 {
     textureLoader.loadTexture(&bgTexture, "../background.png");
     background.setTexture(bgTexture);
+
+    soundEffect.loadSound(sBuffer, mSound, "../bubbles.wav");
+    mSound.setVolume(100.f);
+
+    fontLoader.loadFont(mFont, "../font.ttf");
+    std::cout << "I have loaded the font!" << std::endl;
+    mText.setFont(mFont);
+    mText.setColor(sf::Color::Green);
+    mText.setString("Hello!");
+    mText.setPosition(200.f, 200.f);
+
     sf::Clock clock; //this will be moved to the entity system. will call entity.update();
     sf::Time sinceLastUpdate = sf::Time::Zero;
     while(mWindow.isOpen())
     {
       manageEvents();
+      mSound.play();
       while(sinceLastUpdate > timePerFrame)
       {
         sinceLastUpdate -= timePerFrame;
@@ -79,12 +89,15 @@ void Game::run()
 
 void Game::update(sf::Time deltaTime)
 {
-    
+  //TODO: player.move(deltaTime)    
 }
 
 void Game::render()
 {
   mWindow.clear(sf::Color(150, 150, 150, 255));
-  mWindow.draw(background);
+  //mText.setString("Hello!!!");
+  mWindow.draw(mText);
+  //mWindow.draw(background);
+  
   mWindow.display();
 }
